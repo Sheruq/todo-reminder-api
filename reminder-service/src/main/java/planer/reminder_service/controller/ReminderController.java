@@ -10,11 +10,15 @@ import planer.reminder_service.service.ReminderService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/reminders")
+@RequestMapping("/api/reminders")
 public class ReminderController {
 
-    @Autowired
     private ReminderService svc;
+
+    @Autowired
+    public void setReminderService(ReminderService svc){
+        this.svc = svc;
+    }
 
 
     @GetMapping

@@ -10,11 +10,16 @@ import planer.todo_service.service.ToDoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/todos")
+@RequestMapping("/api/todos")
 public class ToDoController {
 
-    @Autowired
+
     private ToDoService toDoService;
+
+    @Autowired
+    public void setToDoService(ToDoService toDoService) {
+        this.toDoService = toDoService;
+    }
 
     @GetMapping
     public List<ToDo> getAll() {
